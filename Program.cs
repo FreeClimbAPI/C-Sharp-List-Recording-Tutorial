@@ -9,13 +9,13 @@ namespace ListRecordings {
     public static string getFreeClimbAccountId () {
       return System.Environment.GetEnvironmentVariable("ACCOUNT_ID");
     }
-    public static string getFreeClimbAccountToken () {
-      return System.Environment.GetEnvironmentVariable("AUTH_TOKEN");
+    public static string getFreeClimbApiKeys () {
+      return System.Environment.GetEnvironmentVariable("API_KEY");
     }
 
     static void Main (string[] args) {
       // Create FreeClimbClient object
-      FreeClimbClient client = new FreeClimbClient (getFreeClimbAccountId (), getFreeClimbAccountToken ());
+      FreeClimbClient client = new FreeClimbClient (getFreeClimbAccountId (), getFreeClimbApiKeys ());
 
       // Invoke get method to retrieve initial list of recording information
       RecordingList recordingList = client.getRecordingsRequester.getMeta ();
